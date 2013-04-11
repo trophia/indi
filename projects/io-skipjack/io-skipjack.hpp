@@ -4,9 +4,17 @@
 
 namespace IoSkipjack {
 
-class Model : public Indi::Model {
+class Model : public Indi::Model<> {
 public:
-	
+
+	Model(void){
+
+		fishes.start_number = 1000;
+
+		vessels.start_number = 100;
+
+	}
+
 };
 
 } //namespace IoSkipjack

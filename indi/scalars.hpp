@@ -6,17 +6,17 @@
 
 namespace Indi {
 
-typedef Scalar<0,short> Time;
+typedef Scalar<0,unsigned short> Time;
 template<> float Time::base = 0;
 template<> float Time::incr = 1;
 
 Time now;
 
-typedef Scalar<1,short> Latitude;
+typedef Scalar<1,unsigned short> Latitude;
 template<> float Latitude::base = -90;
-template<> float Latitude::incr = 0.01;
+template<> float Latitude::incr = 180/(std::pow(2,sizeof(short)*8));
 
-typedef Scalar<2,short> Longitude;
+typedef Scalar<2,unsigned short> Longitude;
 template<> float Longitude::base = 0;
 template<> float Longitude::incr = 360/(std::pow(2,sizeof(short)*8));
 
@@ -25,7 +25,7 @@ enum Sex {
 	female = 2
 };
 	
-typedef Scalar<101,short> Length;
+typedef Scalar<3,unsigned short> Length;
 template<> float Length::base = 0;
 template<> float Length::incr = 0.001;
 
